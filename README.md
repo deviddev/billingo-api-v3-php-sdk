@@ -32,6 +32,12 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 
 Then run `composer install`
 
+**Or just simple use:**
+
+```
+composer require deviddev/billingo-api-v3-php-sdk
+```
+
 ### Manual Installation
 
 Download the files and include `autoload.php`:
@@ -88,7 +94,7 @@ $apiInstance = new Swagger\Client\Api\BankAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 
+$id = 56; // int |
 
 try {
     $apiInstance->deleteBankAccount($id);
@@ -107,7 +113,7 @@ $apiInstance = new Swagger\Client\Api\BankAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = 56; // int | 
+$id = 56; // int |
 
 try {
     $result = $apiInstance->getBankAccount($id);
@@ -127,8 +133,8 @@ $apiInstance = new Swagger\Client\Api\BankAccountApi(
     new GuzzleHttp\Client(),
     $config
 );
-$page = 56; // int | 
-$per_page = 25; // int | 
+$page = 56; // int |
+$per_page = 25; // int |
 
 try {
     $result = $apiInstance->listBankAccount($page, $per_page);
@@ -149,7 +155,7 @@ $apiInstance = new Swagger\Client\Api\BankAccountApi(
     $config
 );
 $body = new \Swagger\Client\Model\BankAccount(); // \Swagger\Client\Model\BankAccount | Bank account object that you would like to update.
-$id = 56; // int | 
+$id = 56; // int |
 
 try {
     $result = $apiInstance->updateBankAccount($body, $id);
