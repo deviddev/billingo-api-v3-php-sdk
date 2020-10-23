@@ -32,10 +32,10 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 
 Then run `composer install`
 
-**Or just simple use:**
+## Or just simple use:
 
 ```
-composer require deviddev/billingo-api-v3-php-sdk
+composer require deviddev/billingo-api-v3-php-sdk:^v0.1.0
 ```
 
 ### Manual Installation
