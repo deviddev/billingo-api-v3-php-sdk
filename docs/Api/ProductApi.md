@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listProduct**
-> \Swagger\Client\Model\ProductList listProduct($page, $per_page)
+> \Swagger\Client\Model\ProductList listProduct($page, $per_page, $query)
 
 List all product
 
@@ -195,9 +195,10 @@ $apiInstance = new Swagger\Client\Api\ProductApi(
 );
 $page = 56; // int | 
 $per_page = 25; // int | 
+$query = "query_example"; // string | 
 
 try {
-    $result = $apiInstance->listProduct($page, $per_page);
+    $result = $apiInstance->listProduct($page, $per_page, $query);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->listProduct: ', $e->getMessage(), PHP_EOL;
@@ -211,6 +212,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional]
  **per_page** | **int**|  | [optional] [default to 25]
+ **query** | **string**|  | [optional]
 
 ### Return type
 

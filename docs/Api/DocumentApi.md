@@ -4,18 +4,75 @@ All URIs are relative to *https://api.billingo.hu/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**archiveDocument**](DocumentApi.md#archivedocument) | **PUT** /documents/{id}/archive | Archive a proforma document.
 [**cancelDocument**](DocumentApi.md#canceldocument) | **POST** /documents/{id}/cancel | Cancel a document
 [**createDocument**](DocumentApi.md#createdocument) | **POST** /documents | Create a document
 [**createDocumentFromProforma**](DocumentApi.md#createdocumentfromproforma) | **POST** /documents/{id}/create-from-proforma | Create a document from proforma.
+[**deleteDocument**](DocumentApi.md#deletedocument) | **DELETE** /documents/{id} | Delete a draft.
 [**deletePayment**](DocumentApi.md#deletepayment) | **DELETE** /documents/{id}/payments | Delete all payment history on document
+[**documentCopy**](DocumentApi.md#documentcopy) | **POST** /documents/{id}/copy | Copy a document
 [**downloadDocument**](DocumentApi.md#downloaddocument) | **GET** /documents/{id}/download | Download a document in PDF format.
 [**getDocument**](DocumentApi.md#getdocument) | **GET** /documents/{id} | Retrieve a document
 [**getOnlineSzamlaStatus**](DocumentApi.md#getonlineszamlastatus) | **GET** /documents/{id}/online-szamla | Retrieve a document Online Számla status
 [**getPayment**](DocumentApi.md#getpayment) | **GET** /documents/{id}/payments | Retrieve a payment histroy
 [**getPublicUrl**](DocumentApi.md#getpublicurl) | **GET** /documents/{id}/public-url | Retrieve a document download public url.
 [**listDocument**](DocumentApi.md#listdocument) | **GET** /documents | List all documents
+[**posPrint**](DocumentApi.md#posprint) | **GET** /documents/{id}/print/pos | Returns a printable POS PDF
 [**sendDocument**](DocumentApi.md#senddocument) | **POST** /documents/{id}/send | Send invoice to given email adresses.
 [**updatePayment**](DocumentApi.md#updatepayment) | **PUT** /documents/{id}/payments | Update payment history
+
+# **archiveDocument**
+> archiveDocument($id)
+
+Archive a proforma document.
+
+Archive an existing proforma document.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: api_key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\DocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 
+
+try {
+    $apiInstance->archiveDocument($id);
+} catch (Exception $e) {
+    echo 'Exception when calling DocumentApi->archiveDocument: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[api_key](../../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cancelDocument**
 > \Swagger\Client\Model\Document cancelDocument($id)
@@ -179,6 +236,59 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **deleteDocument**
+> deleteDocument($id)
+
+Delete a draft.
+
+Delete an existing draft.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: api_key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\DocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 
+
+try {
+    $apiInstance->deleteDocument($id);
+} catch (Exception $e) {
+    echo 'Exception when calling DocumentApi->deleteDocument: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[api_key](../../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **deletePayment**
 > \Swagger\Client\Model\PaymentHistory[] deletePayment($id)
 
@@ -221,6 +331,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\PaymentHistory[]**](../Model/PaymentHistory.md)
+
+### Authorization
+
+[api_key](../../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **documentCopy**
+> \Swagger\Client\Model\Document documentCopy($id)
+
+Copy a document
+
+Copy a document. Returns the new document if the copy was succeded.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: api_key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\DocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 
+
+try {
+    $result = $apiInstance->documentCopy($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DocumentApi->documentCopy: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  |
+
+### Return type
+
+[**\Swagger\Client\Model\Document**](../Model/Document.md)
 
 ### Authorization
 
@@ -504,7 +668,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listDocument**
-> \Swagger\Client\Model\DocumentList listDocument($page, $per_page, $block_id, $partner_id, $payment_method, $payment_status, $start_date, $end_date, $start_number, $end_number, $start_year, $end_year)
+> \Swagger\Client\Model\DocumentList listDocument($page, $per_page, $block_id, $partner_id, $payment_method, $payment_status, $start_date, $end_date, $start_number, $end_number, $start_year, $end_year, $type)
 
 List all documents
 
@@ -537,9 +701,10 @@ $start_number = 56; // int | Starting number of the document, should not contain
 $end_number = 56; // int | Ending number of the document, should not contain year or any other formatting. Required if `end_year` given
 $start_year = 56; // int | Year for `start_number` parameter. Required if `start_number` given.
 $end_year = 56; // int | Year for `end_number` parameter. Required if `end_number` given.
+$type = new \Swagger\Client\Model\DocumentType(); // \Swagger\Client\Model\DocumentType | Filter documents by type
 
 try {
-    $result = $apiInstance->listDocument($page, $per_page, $block_id, $partner_id, $payment_method, $payment_status, $start_date, $end_date, $start_number, $end_number, $start_year, $end_year);
+    $result = $apiInstance->listDocument($page, $per_page, $block_id, $partner_id, $payment_method, $payment_status, $start_date, $end_date, $start_number, $end_number, $start_year, $end_year, $type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentApi->listDocument: ', $e->getMessage(), PHP_EOL;
@@ -563,6 +728,7 @@ Name | Type | Description  | Notes
  **end_number** | **int**| Ending number of the document, should not contain year or any other formatting. Required if &#x60;end_year&#x60; given | [optional]
  **start_year** | **int**| Year for &#x60;start_number&#x60; parameter. Required if &#x60;start_number&#x60; given. | [optional]
  **end_year** | **int**| Year for &#x60;end_number&#x60; parameter. Required if &#x60;end_number&#x60; given. | [optional]
+ **type** | [**\Swagger\Client\Model\DocumentType**](../Model/.md)| Filter documents by type | [optional]
 
 ### Return type
 
@@ -576,6 +742,62 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **posPrint**
+> string posPrint($id, $size)
+
+Returns a printable POS PDF
+
+Returns a printable POS PDF file of a particular document.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: api_key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\DocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | 
+$size = 3.4; // float | In which size the POS PDF should be rendered.
+
+try {
+    $result = $apiInstance->posPrint($id, $size);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DocumentApi->posPrint: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**|  |
+ **size** | [**float**](../Model/.md)| In which size the POS PDF should be rendered. |
+
+### Return type
+
+**string**
+
+### Authorization
+
+[api_key](../../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/pdf, application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **phone** | **string** |  | [optional] 
 **general_ledger_number** | **string** |  | [optional] 
 **tax_type** | [**\Swagger\Client\Model\PartnerTaxType**](PartnerTaxType.md) |  | [optional] 
+**custom_billing_settings** | [**\Swagger\Client\Model\PartnerCustomBillingSettings**](PartnerCustomBillingSettings.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

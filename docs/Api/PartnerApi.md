@@ -32,7 +32,7 @@ $apiInstance = new Swagger\Client\Api\PartnerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Swagger\Client\Model\PartnerUpsert(); // \Swagger\Client\Model\PartnerUpsert | PartnerUpsert object that you would like to store.
+$body = new \Swagger\Client\Model\Body(); // \Swagger\Client\Model\Body | PartnerUpsert object that you would like to store.
 
 try {
     $result = $apiInstance->createPartner($body);
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PartnerUpsert**](../Model/PartnerUpsert.md)| PartnerUpsert object that you would like to store. |
+ **body** | [**\Swagger\Client\Model\Body**](../Model/Body.md)| PartnerUpsert object that you would like to store. |
 
 ### Return type
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **listPartner**
-> \Swagger\Client\Model\PartnerList listPartner($page, $per_page)
+> \Swagger\Client\Model\PartnerList listPartner($page, $per_page, $query)
 
 List all partners
 
@@ -195,9 +195,10 @@ $apiInstance = new Swagger\Client\Api\PartnerApi(
 );
 $page = 56; // int | 
 $per_page = 25; // int | 
+$query = "query_example"; // string | 
 
 try {
-    $result = $apiInstance->listPartner($page, $per_page);
+    $result = $apiInstance->listPartner($page, $per_page, $query);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PartnerApi->listPartner: ', $e->getMessage(), PHP_EOL;
@@ -211,6 +212,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional]
  **per_page** | **int**|  | [optional] [default to 25]
+ **query** | **string**|  | [optional]
 
 ### Return type
 
@@ -249,7 +251,7 @@ $apiInstance = new Swagger\Client\Api\PartnerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Swagger\Client\Model\PartnerUpsert(); // \Swagger\Client\Model\PartnerUpsert | Partner object that you would like to update.
+$body = new \Swagger\Client\Model\Body1(); // \Swagger\Client\Model\Body1 | Partner object that you would like to update.
 $id = 56; // int | 
 
 try {
@@ -265,7 +267,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PartnerUpsert**](../Model/PartnerUpsert.md)| Partner object that you would like to update. |
+ **body** | [**\Swagger\Client\Model\Body1**](../Model/Body1.md)| Partner object that you would like to update. |
  **id** | **int**|  |
 
 ### Return type

@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional] 
 **vendor_id** | **string** |  | [optional] 
 **partner_id** | **int** |  | 
 **block_id** | **int** |  | 
@@ -19,6 +20,7 @@ Name | Type | Description | Notes
 **items** | [**\Swagger\Client\Model\OneOfDocumentInsertItemsItems[]**](.md) |  | [optional] 
 **comment** | **string** |  | [optional] 
 **settings** | [**\Swagger\Client\Model\DocumentSettings**](DocumentSettings.md) |  | [optional] 
+**advance_invoice** | **int[]** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

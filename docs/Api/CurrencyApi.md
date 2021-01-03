@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**getConversionRate**](CurrencyApi.md#getconversionrate) | **GET** /currencies | Get currencies exchange rate.
 
 # **getConversionRate**
-> \Swagger\Client\Model\ConversationRate getConversionRate($from, $to)
+> \Swagger\Client\Model\ConversationRate getConversionRate($from, $to, $date)
 
 Get currencies exchange rate.
 
@@ -30,9 +30,10 @@ $apiInstance = new Swagger\Client\Api\CurrencyApi(
 );
 $from = new \Swagger\Client\Model\Currency(); // \Swagger\Client\Model\Currency | 
 $to = new \Swagger\Client\Model\Currency(); // \Swagger\Client\Model\Currency | 
+$date = new \DateTime("2013-10-20"); // \DateTime | 
 
 try {
-    $result = $apiInstance->getConversionRate($from, $to);
+    $result = $apiInstance->getConversionRate($from, $to, $date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CurrencyApi->getConversionRate: ', $e->getMessage(), PHP_EOL;
@@ -46,6 +47,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **from** | [**\Swagger\Client\Model\Currency**](../Model/.md)|  |
  **to** | [**\Swagger\Client\Model\Currency**](../Model/.md)|  |
+ **date** | **\DateTime**|  | [optional]
 
 ### Return type
 
