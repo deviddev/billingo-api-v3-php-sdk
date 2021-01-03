@@ -37,7 +37,7 @@ Then run `composer install`
 ## Or just simple use:
 
 ```
-composer require deviddev/billingo-api-v3-php-sdk:^v0.1.0
+composer require deviddev/billingo-api-v3-php-sdk:^0.2
 ```
 
 ### Manual Installation
