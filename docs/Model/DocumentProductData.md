@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **unit** | **string** |  | 
 **vat** | [**\Swagger\Client\Model\Vat**](Vat.md) |  | 
 **comment** | **string** |  | [optional] 
+**entitlement** | [**\Swagger\Client\Model\Entitlement**](Entitlement.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**cancelDocument**](DocumentApi.md#canceldocument) | **POST** /documents/{id}/cancel | Cancel a document
 [**createDocument**](DocumentApi.md#createdocument) | **POST** /documents | Create a document
 [**createDocumentFromProforma**](DocumentApi.md#createdocumentfromproforma) | **POST** /documents/{id}/create-from-proforma | Create a document from proforma.
+[**createModificationDocument**](DocumentApi.md#createmodificationdocument) | **POST** /documents/{id}/create-modification-document | Create a modification document.
 [**deleteDocument**](DocumentApi.md#deletedocument) | **DELETE** /documents/{id} | Delete a draft.
 [**deletePayment**](DocumentApi.md#deletepayment) | **DELETE** /documents/{id}/payments | Delete all payment history on document
 [**documentCopy**](DocumentApi.md#documentcopy) | **POST** /documents/{id}/copy | Copy a document
@@ -232,6 +233,62 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createModificationDocument**
+> \Swagger\Client\Model\Document createModificationDocument($body, $id)
+
+Create a modification document.
+
+Create a modification document for the given document. Returns a new document object if the create is successful.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: api_key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\DocumentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Swagger\Client\Model\ModificationDocumentInsert(); // \Swagger\Client\Model\ModificationDocumentInsert | ModificationDocumentInsert object that you would like to store.
+$id = 56; // int | 
+
+try {
+    $result = $apiInstance->createModificationDocument($body, $id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DocumentApi->createModificationDocument: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\ModificationDocumentInsert**](../Model/ModificationDocumentInsert.md)| ModificationDocumentInsert object that you would like to store. |
+ **id** | **int**|  |
+
+### Return type
+
+[**\Swagger\Client\Model\Document**](../Model/Document.md)
+
+### Authorization
+
+[api_key](../../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
