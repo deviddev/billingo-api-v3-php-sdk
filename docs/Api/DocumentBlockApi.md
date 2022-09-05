@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**listDocumentBlock**](DocumentBlockApi.md#listdocumentblock) | **GET** /document-blocks | List all document blocks
 
 # **listDocumentBlock**
-> \Swagger\Client\Model\DocumentBlockList listDocumentBlock($page, $per_page)
+> \Swagger\Client\Model\DocumentBlockList listDocumentBlock($page, $per_page, $type)
 
 List all document blocks
 
@@ -30,9 +30,10 @@ $apiInstance = new Swagger\Client\Api\DocumentBlockApi(
 );
 $page = 56; // int | 
 $per_page = 25; // int | 
+$type = new \Swagger\Client\Model\DocumentBlockType(); // \Swagger\Client\Model\DocumentBlockType | Filter document blocks by type
 
 try {
-    $result = $apiInstance->listDocumentBlock($page, $per_page);
+    $result = $apiInstance->listDocumentBlock($page, $per_page, $type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DocumentBlockApi->listDocumentBlock: ', $e->getMessage(), PHP_EOL;
@@ -46,6 +47,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**|  | [optional]
  **per_page** | **int**|  | [optional] [default to 25]
+ **type** | [**\Swagger\Client\Model\DocumentBlockType**](../Model/.md)| Filter document blocks by type | [optional]
 
 ### Return type
 

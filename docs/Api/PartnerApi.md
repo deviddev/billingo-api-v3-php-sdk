@@ -32,7 +32,7 @@ $apiInstance = new Swagger\Client\Api\PartnerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Swagger\Client\Model\PartnersBody(); // \Swagger\Client\Model\PartnersBody | PartnerUpsert object that you would like to store.
+$body = new \Swagger\Client\Model\Partner(); // \Swagger\Client\Model\Partner | Partner object that you would like to store.
 
 try {
     $result = $apiInstance->createPartner($body);
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PartnersBody**](../Model/PartnersBody.md)| PartnerUpsert object that you would like to store. |
+ **body** | [**\Swagger\Client\Model\Partner**](../Model/Partner.md)| Partner object that you would like to store. |
 
 ### Return type
 
@@ -251,7 +251,7 @@ $apiInstance = new Swagger\Client\Api\PartnerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Swagger\Client\Model\PartnersIdBody(); // \Swagger\Client\Model\PartnersIdBody | Partner object that you would like to update.
+$body = new \Swagger\Client\Model\Partner(); // \Swagger\Client\Model\Partner | Partner object that you would like to update.
 $id = 56; // int | 
 
 try {
@@ -267,7 +267,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\PartnersIdBody**](../Model/PartnersIdBody.md)| Partner object that you would like to update. |
+ **body** | [**\Swagger\Client\Model\Partner**](../Model/Partner.md)| Partner object that you would like to update. |
  **id** | **int**|  |
 
 ### Return type

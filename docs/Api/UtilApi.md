@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**checkTaxNumber**](UtilApi.md#checktaxnumber) | **GET** /utils/check-tax-number/{tax_number} | Check tax number.
 [**getId**](UtilApi.md#getid) | **GET** /utils/convert-legacy-id/{id} | Convert legacy ID to v3 ID.
+[**getServerTime**](UtilApi.md#getservertime) | **GET** /utils/time | Get the server time
 
 # **checkTaxNumber**
 > \Swagger\Client\Model\TaxNumber checkTaxNumber($tax_number)
@@ -103,6 +104,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\Id**](../Model/Id.md)
+
+### Authorization
+
+[api_key](../../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getServerTime**
+> \Swagger\Client\Model\ServerTime getServerTime()
+
+Get the server time
+
+Return the server time.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: api_key
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-API-KEY', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-API-KEY', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\UtilApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->getServerTime();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UtilApi->getServerTime: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\ServerTime**](../Model/ServerTime.md)
 
 ### Authorization
 
