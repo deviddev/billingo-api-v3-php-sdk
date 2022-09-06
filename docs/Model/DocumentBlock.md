@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **prefix** | **string** |  | [optional] 
 **custom_field1** | **string** |  | [optional] 
 **custom_field2** | **string** |  | [optional] 
+**type** | [**\Swagger\Client\Model\DocumentBlockType**](DocumentBlockType.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
