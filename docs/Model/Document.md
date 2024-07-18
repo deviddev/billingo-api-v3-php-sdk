@@ -28,7 +28,10 @@ Name | Type | Description | Notes
 **items** | [**\Swagger\Client\Model\DocumentItem[]**](DocumentItem.md) |  | [optional] 
 **summary** | [**\Swagger\Client\Model\DocumentSummary**](DocumentSummary.md) |  | [optional] 
 **settings** | [**\Swagger\Client\Model\DocumentSettings**](DocumentSettings.md) |  | [optional] 
+**online_szamla_status** | [**\Swagger\Client\Model\OnlineSzamlaStatusEnum**](OnlineSzamlaStatusEnum.md) |  | [optional] 
 **related_documents** | [**\Swagger\Client\Model\DocumentAncestor[]**](DocumentAncestor.md) |  | [optional] 
+**discount** | [**\Swagger\Client\Model\Discount**](Discount.md) |  | [optional] 
+**correction_type** | [**\Swagger\Client\Model\CorrectionType**](CorrectionType.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
